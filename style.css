@@ -1,0 +1,109 @@
+body {
+    margin: 0px;
+    height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+}
+
+header {
+    align-content: center;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    background-color: #333;
+}
+
+main {
+    margin: 10px;
+    display: grid;
+    grid-template-rows: 50px 50px 1fr;
+}
+
+#addBtn {
+    margin-top: 20px;
+    margin: 9px;
+    height: 30px;
+    width: 100px;
+    background-color: greenyellow;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#bookDialog {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 2px solid #333;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+    width: 200px;
+}
+
+.dialog-content label {
+    font-weight: bold;
+}
+
+.dialog-content input {
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.dialog-content input:focus:user-invalid{
+    border: 1px solid red;
+    box-shadow: 0 0 5px red;
+    outline: 1px solid red;
+}
+.dialog-content input:not([type="checkbox"]):focus:user-valid{
+   border: 1px solid green;
+   box-shadow: 0 0 5px green;
+   outline: 1px solid green;
+}
+.read{
+    display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+.dialog-content .btns {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+.dialogBtn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+/* .dialogBtn:hover {
+    background-color: #555;
+} */
+
+#closeBtn:hover{
+background-color: #ff4a4a;
+}
+
+#addBookBtn:hover{
+background-color: #6bff91;
+
+}
+
+dialog::backdrop {
+   
+    background-color: rgba(0, 0, 0, 0.5);
+}
