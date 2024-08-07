@@ -107,3 +107,38 @@ dialog::backdrop {
    
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+.library{
+   border-radius: 9px;
+   
+   padding: 20px;
+   margin: 10px;
+   gap: 10px;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+}
+
+.book-card{
+background-color: #ddd;
+border-radius: 9px;
+padding: 20px;
+
+}
+.book-card:hover{
+    box-shadow: 0 0 3px black;
+}
+
+.book-card button:hover{
+   background-color: #555;
+}
+
+.book-card button{
+   background-color: #333;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   padding: 10px;
+    margin: 5px;
+}
