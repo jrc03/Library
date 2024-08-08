@@ -20,15 +20,13 @@ closeButton.addEventListener("click", () => {
 });
 
 const myLibrary = [
-  {
-    title: "The Hobbit",
-    author: "J. R. R. Tolkien",
-    pages: 310,
-    read: false,
-  }, // Add more books here...
+  new Book("The Hobbit", "J. R. R. Tolkien", 310, false),
+  new Book("To Kill a Mockingbird", "Harper Lee", 281, false),
+    new Book("1984", "George Orwell", 328, true),
+  // Add more books here...
 ];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read){
   // the constructor...
   this.title = title;
   this.author = author;
@@ -36,9 +34,11 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+
+
 function display() {
   console.table(myLibrary);
-
+  library.textContent = "";
 
   
   myLibrary.forEach((book, index) => {
@@ -63,11 +63,13 @@ function display() {
   
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remove";
+    removeButton.classList.add("removeBtn");
     removeButton.addEventListener("click", () => removeBook(index));
     bookCard.appendChild(removeButton);
   
     const toggleReadButton = document.createElement("button");
     toggleReadButton.textContent = "Toggle Read";
+    toggleReadButton.classList.add("toggleReadBtn");
     toggleReadButton.addEventListener("click", () => toggleReadStatus(index));
     bookCard.appendChild(toggleReadButton);
 
@@ -83,6 +85,14 @@ function addBookToLibrary() {
   const pages = document.querySelector("#pages").value;
   const read = document.querySelector("#readStatus").checked;
 
+
+  if (!title || !author || !pages) {
+    alert("Please fill in all required fields.");
+    return; // Stop execution if validation fails
+}
+
+
+
   // Create new book and add to library
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
@@ -93,6 +103,15 @@ function addBookToLibrary() {
 function clear() {
   document.querySelector("form").reset();
 }
+Book.prototype.toggleRead = function() {
+  this.read = !this.read;
+};
+
+function toggleReadStatus(index) {
+  myLibrary[index].toggleRead();
+  display();
+}
+
 
 function removeBook(index){
 myLibrary.splice(index,1);
