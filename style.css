@@ -5,7 +5,7 @@ body {
 
 section {
     display: grid;
-    grid-template-rows: 70px 1fr;
+    grid-template-rows: 50px 1fr;
 }
 
 header {
@@ -13,28 +13,13 @@ header {
     color: white;
     text-align: center;
     font-size: 24px;
-    background: linear-gradient(135deg, #333, #555);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-transform: uppercase;
-}
-.heading{
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    align-items: center;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    background-color: #f7f7f7; /* Light background */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #333;
 }
 
 main {
     margin: 10px;
     display: grid;
-    grid-template-rows: 100px  1fr;
+    grid-template-rows: 50px 50px 1fr;
 }
 
 #addBtn {
@@ -42,26 +27,17 @@ main {
     margin: 9px;
     height: 30px;
     width: 100px;
-    background-color: #02c935;
+    background-color: greenyellow;
     border: none;
     border-radius: 8px;
     cursor: pointer;
 }
-#addBtn:hover{
-    background-color: #24a02c;
-    transition: background-color 0.2s ease-in-out;
-    transition: box-shadow 0.2s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 
-}
-
-#bookDialog {   
+#bookDialog {
+    padding: 20px;
+    border-radius: 10px;
     background-color: #fff;
     border: 2px solid #333;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-
 }
 
 .dialog-content {
@@ -91,7 +67,6 @@ main {
    border: 1px solid green;
    box-shadow: 0 0 5px green;
    outline: 1px solid green;
-
 }
 .read{
     display: flex;
@@ -115,37 +90,31 @@ align-items: center;
     cursor: pointer;
 }
 
+/* .dialogBtn:hover {
+    background-color: #555;
+} */
 
-
-#closeBtn:hover , .removeBtn:hover{
+#closeBtn:hover{
 background-color: #ff4a4a;
-transition: background-color 0.2s ease-in-out;
-transition: box-shadow 0.2s ease-in-out;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-
 }
 
-#addBookBtn:hover, .toggleReadBtn:hover{
-background-color: #17c243;
-transition: background-color 0.2s ease-in-out;
-transition: box-shadow 0.2s ease-in-out;
-box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+#addBookBtn:hover{
+background-color: #6bff91;
 
 }
 
 dialog::backdrop {
+   
     background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
 }
 
 
 .library{
-    background-color: #f7f7f7;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 1200px;
-    gap: 8px;
+   border-radius: 9px;
+   
+   padding: 20px;
+   margin: 10px;
+   gap: 10px;
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 }
@@ -154,16 +123,15 @@ dialog::backdrop {
 background-color: #ddd;
 border-radius: 9px;
 padding: 20px;
-transition: transform 0.2s ease-in-out;
+
 }
 .book-card:hover{
-   transform: scale(1.05);
-    box-shadow: 0 0 2px black;
+    box-shadow: 0 0 3px black;
 }
 
-/* .book-card button:hover{
+.book-card button:hover{
    background-color: #555;
-} */
+}
 
 .book-card button{
    background-color: #333;
