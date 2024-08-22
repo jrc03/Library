@@ -13,6 +13,7 @@ const library = document.querySelector(".library");
 showButton.addEventListener("click", () => {
   dialog.showModal();
 });
+  
 
 // "Close" button closes the dialog
 closeButton.addEventListener("click", () => {
